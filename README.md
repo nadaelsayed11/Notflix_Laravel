@@ -213,3 +213,23 @@ For questions or support:
 ---
 
 **Note:** See `PROJECT_REFACTORING.md` for detailed refactoring progress and technical documentation.
+
+# Demo
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DoniaEsawi/NotFlix/main/Screenshot%20(260).png" width="600px" alt="Screenshot 260"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/DoniaEsawi/NotFlix/blob/main/ezgif-6-7e49ffef7dbd.gif" width="600px" alt="Gif 1"/>
+</p>
+
+<p align="center">
+  <img src="https://i.ibb.co/HNxGhbN/ezgif-com-gif-maker-1.gif" width="600px" alt="Gif 2"/>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DoniaEsawi/NotFlix/main/Screenshot%20(263).png" width="600px" alt="Screenshot 263"/>
+</p>

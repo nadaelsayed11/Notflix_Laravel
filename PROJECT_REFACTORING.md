@@ -44,7 +44,6 @@ Refactoring of the NOTflix project from vanilla PHP to Laravel framework.
 - [x] Actor Model with relationships (movies, series)
 - [x] Frontend fixes:
   - Image positioning fixed
-  - Purple gradient background issue resolved
   - Navbar styling updated with consistent bright colors
   - NOTflix logo links to home page
   - Cookie font added for footer consistency
@@ -67,19 +66,9 @@ Refactoring of the NOTflix project from vanilla PHP to Laravel framework.
   - Profile section (admin info, edit button)
   - Navbar with "Add" dropdown menu
   - Filterable grid showing movies, series, and advertisements
-  - Edit/Delete buttons (placeholders for future functionality)
+  - Add new Actor, Movie, Series, Director, and prize
+  - Edit/Delete Actor, Movie, Series, Director, and prize
 - [x] Admin routes with authentication middleware
-
-#### 9. Frontend Assets
-- [x] All CSS files migrated
-- [x] All JavaScript files migrated
-- [x] Image assets verified and missing ones copied:
-  - Profile-Card.css
-  - logo.png
-  - default-user.png
-  - user_pics directory symlinked
-  - Sign in page images (group_38.png, Untitled design.png)
-- [x] Frontend fixes applied across pages
 
 ---
 
