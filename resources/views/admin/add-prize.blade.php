@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html style="background: rgb(33,33,46);">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Add Prize - NOTflix Admin</title>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Acme">
+    <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome-all.min.css') }}">
+    <link rel="icon" href="{{ asset('assets/img/logo.png') }}">
+    <style>
+        body {
+            background: rgb(33,33,46);
+            color: #fff;
+        }
+        .form-container {
+            background: rgba(61,5,81,0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 100px;
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+        .form-label {
+            color: #fff;
+            font-weight: 500;
+        }
+        .form-control, .form-select {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+        }
+        .form-control:focus, .form-select:focus {
+            background: rgba(255,255,255,0.15);
+            border-color: #219bd7;
+            color: #fff;
+        }
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+        h2 {
+            font-family: 'Cookie', cursive;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body style="min-height: 100vh;margin: 0px;padding: 0px;">
+    {{-- NAVBAR --}}
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top clean-navbar" style="padding: 4px;filter: hue-rotate(9deg);background: rgba(61,5,81,0.9) !important;color: rgb(61,5,81);border-color: rgb(226,227,235);">
+        <div class="container">
+            <a class="navbar-brand logo" href="{{ route('home') }}" style="color: rgba(255,255,255,0.9);font-family: Acme, sans-serif;font-size: 28px;padding-top: 0px;padding-bottom: 0px;">
+                <img src="{{ asset('assets/img/5027d5fc-d38c-4aba-ab1c-e41212bf9e10_200x200.png') }}" style="margin-top: -1px;padding-top: 13px;">
+            </a>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                <img src="{{ asset('assets/img/icons8-menu-64.png') }}">
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.dashboard') }}" style="color: rgba(255,255,255,0.9);font-family: Acme, sans-serif;font-size: 18px;">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home') }}" style="color: rgba(255,255,255,0.9);font-family: Acme, sans-serif;font-size: 18px;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}" style="color: rgba(255,255,255,0.9);font-family: Acme, sans-serif;font-size: 18px;">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container mx-auto">
+            <h2>Add New Prize</h2>
+
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            <form method="POST" action="{{ route('admin.prize.store') }}">
+                @csrf
+
+                {{-- Prize Title --}}
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="title" class="form-label">Prize Title *</label>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" placeholder="e.g., Oscar, Emmy, Golden Globe" required>
+                        <small class="text-muted">The name of the award or prize</small>
+                    </div>
+                </div>
+
+                {{-- Prize Type --}}
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="type" class="form-label">Prize Type *</label>
+                        <input type="text" class="form-control" id="type" name="type" value="{{ old('type') }}" placeholder="e.g., Best Actor, Best Director, Best Picture" required>
+                        <small class="text-muted">The category or type of the award</small>
+                    </div>
+                </div>
+
+                {{-- Submit Buttons --}}
+                <div class="row mt-4">
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg" style="background: #219bd7;border: none;padding: 10px 40px;font-size: 18px;">
+                            <i class="fa fa-save"></i> Add Prize
+                        </button>
+                        <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary btn-lg" style="padding: 10px 40px;font-size: 18px;margin-left: 15px;">
+                            <i class="fa fa-times"></i> Cancel
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->integer('age')->nullable()->after('email');
+            $table->enum('gender', ['M', 'F'])->nullable()->after('age');
+            $table->string('image')->default('M.png')->after('gender');
+            $table->enum('type', ['user', 'admin'])->default('user')->after('image');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn(['age', 'gender', 'image', 'type']);
+        });
+    }
+};
