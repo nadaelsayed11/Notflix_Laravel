@@ -81,17 +81,16 @@ NOTflix is a comprehensive entertainment platform where users can:
 - Movie and Series detail pages
 - Actor and Director profile pages
 - User profile management
-- Favorites system
+- Favorites system (backend)
 - Admin dashboard
 - Responsive design
 
 ### 🚧 Coming Soon
-- Add content pages (Movies, Series, Actors, etc.)
-- Edit content functionality
-- Delete content functionality
-- Advanced search
+- Edit content functionality (Movies, Series, Actors, etc.) for admin.
+- Delete content functionality for admins.
+- add to favorites 
 - Rating system improvements
-- Novel module completion
+- Novel, and season module completion
 
 ## Project Structure
 
@@ -148,7 +147,7 @@ laravel_Notflix/
 - Edit profile
 
 ### Admin
-- All user capabilities
+- All user capabilities except the favorite list
 - Add new content (Movies, Series, Actors, etc.)
 - Edit existing content
 - Delete content
@@ -194,21 +193,6 @@ This is a student project for CMP Department, Cairo University.
 ## License
 
 This project is open-source software.
-
-## Contact
-
-For questions or support:
-- Email: contact@notflix.com
-- Address: Cairo University Rd, Oula, Giza District, Giza Governorate
-- Phone: +1 141992110
-
-## Acknowledgments
-
-- Original PHP version developers
-- Laravel framework
-- Bootstrap team
-- Font Awesome
-- Google Fonts
 
 ---
 
